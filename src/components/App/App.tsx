@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import CafeInfo from "../CafeInfo/CafeInfo";
-import Notification from "../Notification/Notificatiom";
+import Notification from "../Notification/Notification";
 import VoteOptions from "../VoteOptions/VoteOptions";
 import css from "./App.module.css";
 import type { Votes, VoteType } from "../../types/votes";
@@ -47,7 +46,7 @@ export default function App() {
       <VoteOptions
         onVote={handleVote}
         onReset={resetVotes}
-        total={totalVotes}
+        canReset={totalVotes > 0}
       />
     </div>
   );
